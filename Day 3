@@ -1,0 +1,80 @@
+"""
+a=int(input())
+if a&1==1:
+    print("odd")
+else :
+    print("even")
+"""
+"""
+# set bits
+s=int(input())
+if s>0:
+    s=bin(s)
+    s=s[2:]
+    count=0
+    print(s)
+    for i in range(len(s)):
+        if s[i]=="1":
+            count+=1
+    print(count)
+else :
+    s=bin(s)
+    s=s[3:]
+    count=0
+    print(s)
+    for i in range(len(s)):
+        if s[i]=="1":
+            count+=1
+    print(count)
+"""
+"""
+c=7
+c=bin(c)
+c=c[2:]
+#c=int(c)
+res=0
+for i in range(len(c)):
+    res=res+int(c[i])*2**i
+print(res)
+"""
+"""
+a=15
+res=bin(a)
+a=res[2:]
+a=int(a)
+n=int(input("enter a position"))
+b=n-1
+res=(2**b)*a
+c=bin(res)
+c=c[2:]
+"""
+# power of 2
+n=int(input("enter a number"))
+c=0
+if  n==1 :
+    print("it is 2 power number")
+else :
+    for i in range(n//2):
+        if 2**i==n  :
+            print("it is 2 power number")
+            c+=1
+            break
+    if c==0:
+        print("it is not a 2 power number")
+n=int(input("enter a number"))
+if  n==1 :
+    print("it is 2 power number")
+else :
+    for i in range(n//2):
+        if 4**i==n  :
+            print("it is 4 power number")
+            c+=1
+            break
+    if c==0:
+        print("it is not a 4 power number")
+
+
+
+
+
+    
