@@ -1,0 +1,109 @@
+"""
+n=int(input())
+si=0
+li=n//2
+floor=-1
+while si<=li:
+    mid=(si+li)//2
+    sq=mid*mid
+    if sq==n:
+        floor=mid
+        break
+    elif sq<n:
+        floor=mid
+        si=mid+1
+    else :
+        li=mid-1
+print(floor)
+"""
+"""
+l=[1,4,6,7,8]
+key=5
+floor=-1
+def se(l,si,li,key):
+    while(si<=li):
+        mid=(si+li)//2
+        if l[mid]==key:
+            #print(l[mid])
+            print("found")
+            break
+        elif l[mid]<key:
+            floor=l[mid]
+            print(floor)
+            si=mid+1
+        else :
+            li=mid-1
+            
+se(l,0,len(l)-1,key)
+"""
+"""
+def square_root_binary_search(number, epsilon=1e-6):
+    if number < 0:
+        raise ValueError("Cannot compute the square root of a negative number.")
+
+    if number == 0 or number == 1:
+        return number
+
+    low, high = 0, number
+    while high - low > epsilon:
+        mid = (low + high) / 2
+        mid_squared = mid * mid
+
+        if mid_squared < number:
+            low = mid
+        else:
+            high = mid
+
+    return (low + high) / 2
+
+# Example usage
+number = 13
+result = square_root_binary_search(number)
+print(f"The square root of {number} is approximately {result:.6f}")
+"""
+s=abaac
+def pal(s):
+    asdf;lkfjasdf;lkj
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
