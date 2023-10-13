@@ -1,0 +1,87 @@
+"""
+a=input("enter number of lemons")
+b=21
+try:
+    print ("Both a and b are equal" if int(a) == int(b) else int(a-b)
+        if int(a) > int(b) else b-a )
+except ValueError :
+    print("enter valid input" if a.isalpha() else "valid input")
+"""
+""""
+
+import random
+l=[[],[],[],[]]
+n=int(input("enter a number"))
+l=[0,1]
+s=1
+for i in range(n):
+    for j in range(n):
+        c=random.choice(l)
+        if j<=4:
+            l[i].append(c)
+        print()
+print(l)
+#for i in range(n)
+"""
+""""
+s=input("enter a string")
+r=""
+s1=""
+for i in range(len(s)):
+   if s[i].isalpha():
+       s1=s1+s[i]
+   else :
+       r=r+s[i]
+     
+print(s1)
+print(s1[::-1])
+print(r)
+#print(I)
+#print(c)
+"""
+"""
+res=0
+l=[1 ,2 ,4 ,5]
+#l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    res=res^l[i]
+print(res)
+"""
+def fact(n):
+    if n==0:
+        return 1
+    elif n==1:
+        return 1
+    else :
+        return  n*fact(n-1)
+loc=fact(100)
+print(loc)
+def fib(n) :
+    if n==0:
+        return 0
+    elif n==1:
+        return 1
+    else :
+        return fib(n-1)+fib(n-2)
+print(fib(8))
+n=int(input("enter a number"))
+fact=1
+for i in range(1,n+1):
+    fact=fact*i
+print(fact)
+    
+
+            
+        
+        
+    
+    
+    
+    
+    
+
+
+       
+       
+    
+    
