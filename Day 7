@@ -1,0 +1,111 @@
+
+n=int(input())
+sq=[[0]*n for i in range(n)]
+#print(sq)
+num=1
+i=n//2
+j=n-1
+while num<=(n*n):
+    if i<0 and j==n:
+        i=0
+        j=n-2
+    else:
+        if i<0:
+             i=n-1
+        if j==n:
+             j=0
+    if sq[i][j]:
+        i=i+1
+        j=j-2
+        continue
+    sq[i][j]=num
+    num+=1
+    i=i-1
+    j=j+1
+    
+print(sq)
+for i in sq:
+    print(*i)
+
+"""
+def square(n,sq,i,j,num):
+    if num>n*n:
+        return sq
+    else :
+        if i<0 and j==n:
+           i=0
+           j=n-2
+        else:
+            if i<0:
+             i=n-1
+            if j==n:
+             j=0
+        if sq[i][j]:
+            i=i+1
+            j=j-2
+            #continue
+        sq[i][j]=num
+        square(n,sq,i-1,j+1,num+1)
+        return sq
+
+n=int(input("enter n value"))
+sq=[[0]*n for i in range(n)]
+i=n//2
+j=n-1
+num=1
+print(square(n,sq,i,j,num))
+"""
+"""
+l=[]
+s=[]
+sum=0
+n=int(input("enter size of a matrix"))
+for i in range(n):
+    l.append(list(map(int,input().split(" "))))
+print(l)
+for i in range(len(l)):
+    for j in range(len(l)):
+       sum+=l[i][j]
+       #print(sum)
+    if sum==0:
+        print(*l[i],end=" ")
+    sum=0
+"""
+"""
+# bubble sort
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        if l[i]>l[j]:
+            l[i],l[j]=l[j],l[i]#total no of swap is n(n-1)/2
+print(l)
+"""
+#selection sort
+
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    min=i
+    for j in range(i+1,len(l)):
+        if l[j]<l[min]:
+            min=j
+    l[i],l[min]=l[min],l[i]# no fof swaps=n-1 and no of comparison=n(n-1)/2
+print(l)
+"""
+def f(n,c):
+    if n<=1 :
+        print(c+1)
+    elif n%2==0:
+        #print(n)
+        c+=1
+        f(n//2,c)
+    elif n%2!=0:
+        #print(n)
+        c+=1
+        c1=(3*n+1)
+        f(c1,c)
+f(13,0)
+"""
+
+
+    
+        
