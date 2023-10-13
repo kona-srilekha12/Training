@@ -1,0 +1,86 @@
+"""
+class Siva:
+   
+    def __init__(self,a,b):
+        
+        print("it is a parameter constructor")
+        def __init__(self):
+            super().__init__(self,a,b)
+        print("it is default constructor")
+o=Siva(2,4)
+"""
+"""
+# neon number
+class Neon:
+    def num(self):
+        l=[]
+        n=int(input("enter a number"))
+        for i in range(1,n):
+            s=i**2
+            sum=0
+            while s>0:
+                rem=s%10
+                sum+=rem
+                s=s//10
+            if(sum==i):
+                l.append(i)
+        print(l)
+            
+obj=Neon()
+obj.num()
+"""
+class A:
+    def __init__(self,n,m):
+        self.n=n
+        self.m=m
+class B(A):
+    def __init__(self,n,m):
+        super().__init__(n,m)
+    def display(self):
+       l=[]
+       for i in range(0,self.n):
+           s=i**2
+           sum=0
+           while s>0:
+               rem=s%10
+               sum+=rem
+               s=s//10
+           if sum==i:
+                l.append(i)
+       print(l)
+class C(A):
+    def __init__(self,n,m):
+        super().__init__(n,m)
+    def prime(self,m):
+        is_prime=True
+        for i in range(2,self.m):
+            if self.m%i==0:
+                is_prime=False
+        if is_prime==True:
+            #print("it is prime number")
+            s=True
+            return s
+            res=str(self.m)
+            
+    def rev(self):
+      res=str(self.m)
+      res=res[::-1]
+      return res      
+n=int(input("enter a number for finding the range of a neon number"))
+obj=B(n,0)
+obj.display()
+m=int(input("enter a number to check whether the given number is magical prime number or not"))
+obj1=C(0,m)
+#print(obj1.m)
+loc=obj1.prime(obj1.m)
+#print(loc)
+loc1=obj1.rev()
+#print(loc1)
+if loc==True and obj1.prime(loc1)==True:
+    print("it is a magical number")
+
+
+
+
+
+        
