@@ -1,0 +1,62 @@
+"""
+
+def three_pointer_algorithm(arr):
+    n = len(arr)
+    left, right, current = 0, n - 1, 0
+
+    while current <= right:
+        if arr[current] == 0:
+            arr[left], arr[current] = arr[current], arr[left]
+            left += 1
+            current += 1
+        elif arr[current] == 2:
+            arr[right], arr[current] = arr[current], arr[right]
+            right -= 1
+        else:
+            current += 1
+
+# Example usage:
+arr = [0, 2, 1, 2, 0, 1]
+three_pointer_algorithm(arr)
+print(arr)
+"""
+"""
+# count sort
+l=[0,2,1,2,0,1]
+c=[0,0,0,0,0,0]
+for i in range(len(l)):
+    for j in range(len(c)):
+        if str(l[i]) in str(j):
+            c[j]+=1
+print(c)
+res=[]
+for i in  range(len(c)):
+    res=res+[i]*c[i]
+print(res)
+l=[5,2,9,1,5]
+c=[0,0,0,0,0,0,0,0,0,0]
+for i in range(len(l)):
+    for j in range(len(c)):
+        if str(l[i]) in str(j):
+            c[j]+=1
+print(c)
+res=[]
+for i in  range(len(c)):
+    res=res+[i]*c[i]
+print(res)
+"""
+"""
+#water Trapping
+l= [4,2,0,3,2,5]
+count=0
+for i in range(len(l)):
+     maxl=max(l[:i+1])
+     maxr=max(l[i:])
+     if maxl>maxr :
+         maxr=maxr-l[i]
+         count+=maxr
+     else :
+        maxl=maxl-l[i]
+        count+=maxl
+print(count)
+"""
