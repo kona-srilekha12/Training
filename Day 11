@@ -1,0 +1,98 @@
+"""
+# brute phorse algorithm
+l=[20,3,1,15,30,50]
+max=0
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        if (l[j]-l[i])>max:
+            max=l[j]-l[i]
+print(max)
+"""
+#greedy method
+"""
+l=[20,3,1,15,30,50]
+max=0
+buy=l[0]
+for i in l:
+    if i<buy:
+        buy=i
+        #print(f"buy is {buy}")
+    elif(i-buy)>max:
+        max=i-buy
+print(max)
+"""
+# 122 leetcode
+"""
+l=[7,1,5,3,6,4]
+max=0
+for i in range(1,len(l)):
+    if l[i]>l[i-1]:
+        max+=l[i]-l[i-1]
+print(max)
+"""
+#knapsack
+"""
+kw=int(input())
+wt=list(map(int,input().split()))
+pr=list(map(int,input().split()))
+l=list(zip(wt,pr))
+res=[]
+l.sort(key=lambda x:x[1]/x[0],reverse=True)
+print(list(l))
+maxpr=0
+for w,p in l:
+    if w<=kw:
+        maxpr+=p
+        kw-=w
+    else :
+        maxpr+=w*(p/w)
+        break
+print(maxpr)
+"""
+"""
+l=[5,8,1,2,3,6,9]
+target=15
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        for k in range(j+1,len(l)):
+            if l[i]+l[j]+l[k]==target:
+                print(l[i],l[j],l[k])
+                
+"""
+"""
+l=[5,8,1,2,3,6,9]
+target=15
+c=l[0]
+res=target-l[0]
+sum=0
+if res<target:
+    for i in range(1,len(l)):
+        for j in range(i+1,len(l)):
+            if l[i]+l[j]==res:
+                print(l[i],l[j],c)
+"""
+l=[10,11,17,19,21,22,25,26,9,]
+l.sort()
+def sum1(l,n,target):
+    j=n-1
+    i=1
+    k=0
+    while k<len(l)-1:
+        x=l[k]
+        i=
+        j=n-1
+        while i<j:
+             if x+l[i]+l[j]==target:
+                print(x, l[i], l[j])
+                i+=1
+                j-=1
+           #return True
+             elif x+l[i]+l[j]<target:
+                 i+=1
+             else :
+                 j-=1
+        k+=1
+sum1(l,len(l),68)
+    
+
+    
