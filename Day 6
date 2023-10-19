@@ -1,0 +1,190 @@
+TRAINING DAY-6
+
+l=list(map(int,input().split(',')))
+#single array dynamic input
+for i in range(len(l)):
+    print(l[i])
+	
+s=input()
+c=0
+c1=0
+for i in s:
+    if(i=='('):
+        c+=1
+    elif(i==')'):
+        c1+=1
+if(c1>=c):
+    print("("*c1,end="")
+    print(")"*c1)
+elif(c>c1):
+    print("(" * c, end="")
+    print(")" * c)
+//(()
+(( ))
+--------------------------------------------------------
+//prime number using recursion
+n = int(input())
+c = 0
+b=n
+def p(n, c):
+    if n == 0 or n == 1:
+        return c
+    else:
+        c = p(n - 1, c)
+        a = (b % n)
+        if a == 0:
+            c += 1
+        return c
+
+r = p(n, c)
+if(r>=2):
+    print("not a prime")
+else:
+    print("prime")
+//()
+----------------------------------------------------------
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        l=[]
+        res=[]
+        def backtrack(opencount=0,closecount=0):
+            if opencount==closecount==n:
+                res.append("".join(l))
+            if opencount<n:
+                l.append('(')
+                backtrack(opencount+1,closecount)
+                l.pop()
+            if closecount<opencount:
+                l.append(')')
+                backtrack(opencount,closecount+1)
+                l.pop()
+            return res
+        return backtrack()
+//backtracting
+
+def is_valid(board, row, col, n):
+    for i in range(col):  # check horizontal
+        if board[row][i] == 1:
+            return False
+    i = row
+    j = col
+    while i >= 0 and j >= 0:  # upper left diag
+        if board[i][j] == 1:
+            return False
+        i -= 1
+        j -= 1
+    i = row
+    j = col
+    while i < n and j >= 0:  # bottom left diag
+        if board[i][j] == 1:
+            return False
+        i += 1
+        j -= 1
+
+    return True
+-----------------------------------------------------------
+
+def solve(n):
+    board = [[0 for i in range(n)] for j in range(n)]
+
+    def backtrack(col):
+        if col == n:
+            return True
+        for i in range(n):
+            if is_valid(board, i, col, n):
+                board[i][col] = 1
+
+                if backtrack(col + 1):
+                    return True
+
+                board[i][col] = 0
+
+        return False
+
+    if backtrack(0):
+        for row in board:
+            print(row)
+    else:
+        print("no solution")
+
+
+n = 5
+solve(n)
+-----------------------------------------------------------------------------------------------------
+                          SORTING METHODS
+
+----------------------------------------------------------------------------------------------------
+
+//bubble sort
+
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    for j in range(len(l)-i-1):
+        if l[j] > l[j+1]:
+            temp=l[j]
+            l[j]=l[j+1]
+            l[j+1]=temp
+print(l)
+
+             (Or)
+
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        if l[i]>l[j]:
+            l[i],l[j]=l[j],l[i]#total no of swap is n(n-1)/2
+print(l)
+
+NOTE:-
+Worst-case time complexity: O(n^2)
+Best-case time complexity: O(n)
+Average-case time complexity: O(n^2)
+Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It continues to do this until no more swaps are needed.
+---------------------------------------------------------------------------------------------------------------------------
+//selection sort
+
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    min=i
+    for j in range(i+1,len(l)):
+        if l[j]<l[min]:
+            min=j
+    l[i],l[min]=l[min],l[i]# no fof swaps=n-1 and no of comparison=n(n-1)/2
+print(l)
+
+NOTE:-
+Worst-case time complexity: O(n^2)
+Best-case time complexity: O(n^2)
+Average-case time complexity: O(n^2)
+Selection Sort repeatedly finds the minimum element from the unsorted portion of the list and moves it to the beginning.
+
+Input: [5, 2, 9, 3, 4]
+Pass 1: [2, 5, 9, 3, 4]
+Pass 2: [2, 3, 9, 5, 4]
+Pass 3: [2, 3, 4, 5, 9]
+
+----------------------------------------------------------------------------------------------------
+//insertion sort
+
+l=list(map(int,input().split(" ")))
+for i in range(len(l)):
+    key=l[i]
+    j=i-1
+    while j>=0 and l[j]<key:
+        l[j+1]=l[j]
+        j=j-1
+    l[j+1]=key
+print(l)
+
+NOTE:-
+Worst-case time complexity: O(n^2)
+Best-case time complexity: O(n)
+Average-case time complexity: O(n^2)
+Insertion Sort builds the sorted array one element at a time by repeatedly taking an element from the unsorted portion and inserting it into its correct position in the sorted portion.
+
+Input: [5, 2, 9, 3, 4]
+Pass 1: [2, 5, 9, 3, 4]
+Pass 2: [2, 5, 9, 3, 4]
+Pass 3: [2, 3, 5, 9, 4]
+Pass 4: [2, 3, 4, 5, 9]
+----------------------------------------------------------------------------------------------------
